@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Projects</title>
+  <link rel="stylesheet" href="../static/styles1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Projects</h1>
+    <form id="projectForm" method="POST" action="/student_project" enctype="multipart/form-data">
+      <label for="studentName">Student Name:</label>
+      <input name="studentName" type="text" id="studentName" required><br>
+
+      <label for="projectTitle">Project Title:</label>
+      <input type="text" name="projectTitle" id="projectTitle" required><br>
+
+      <label for="projectDescription">Project Description:</label>
+      <textarea id="projectDescription" name="projectDescription" rows="5" required></textarea><br>
+
+      <label for="projectFile">Project File:</label>
+      <input type="file" id="projectFile" name="projectFile" accept=".zip" required><br>
+
+      <label for="githubLinkCheckbox">
+        <input type="checkbox" id="githubLinkCheckbox">
+        Have a GitHub link for this project?
+      </label><br>
+
+      <div id="githubLinkContainer" style="display: none;">
+        <label for="githubLink">GitHub Link:</label>
+        <input type="url" id="githubLink" name="githubLink">
+      </div><br>
+
+      <button type="submit">Submit Project</button>
+    </form>
+
+    <div id="projectList">
+      <h2>Submitted Project:</h2>
+      <ul id="projects"></ul>
+    </div>
+  </div>
+
+  <!-- <script src="../static/script1.js"></script> -->
+</body>
+</html>
